@@ -986,6 +986,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_text
+      value: controls
+      objectReference: {fileID: 0}
     - target: {fileID: 9071484699069351092, guid: 3e0d654562ae20e4eb251c974f2df8f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1321,6 +1326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_text
+      value: other
       objectReference: {fileID: 0}
     - target: {fileID: 9071484699069351092, guid: 3e0d654562ae20e4eb251c974f2df8f3,
         type: 3}
@@ -2249,6 +2259,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.00012207031
       objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_text
+      value: gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 9071484699069351092, guid: 3e0d654562ae20e4eb251c974f2df8f3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2559,6 +2579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_text
+      value: video
       objectReference: {fileID: 0}
     - target: {fileID: 9071484699069351092, guid: 3e0d654562ae20e4eb251c974f2df8f3,
         type: 3}
@@ -3245,6 +3270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751745053102147619, guid: 3e0d654562ae20e4eb251c974f2df8f3,
+        type: 3}
+      propertyPath: m_text
+      value: audio
       objectReference: {fileID: 0}
     - target: {fileID: 9071484699069351092, guid: 3e0d654562ae20e4eb251c974f2df8f3,
         type: 3}
