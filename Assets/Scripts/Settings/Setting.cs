@@ -1,9 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using System;
 using UnityEngine;
 
-public class Setting : MonoBehaviour
+public abstract class Setting<T> : MonoBehaviour
 {
-    private TMP_Text text;
+    public SettingType label = SettingType.Null;
+    public T value;
+
+    public abstract void WriteToPrefs();
+    public abstract void LoadFromPrefs();
 }

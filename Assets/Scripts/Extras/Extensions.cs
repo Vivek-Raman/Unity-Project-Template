@@ -22,4 +22,14 @@ public static class Extensions
         b = !b;
         return b;
     }
+
+    /// <summary>
+    /// Returns 1 if true, 0 if false.
+    /// </summary>
+    /// <param name="b">Value to cast as integer.</param>
+    /// <returns></returns>
+    public static int AsInt(this bool b)
+    {
+        return b ? 1 : 0;
+    }
 }
