@@ -203,7 +203,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 909256379074128057}
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -1081,7 +1081,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 34.45
+  m_fontSize: 29.45
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1230,7 +1230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 083595f76e674b188736351cfa90d62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  label: 1
   stopAt768P: 1
 --- !u!1001 &3725802307579197628
 PrefabInstance:
@@ -1307,7 +1306,7 @@ PrefabInstance:
     - target: {fileID: 1284481594647268737, guid: 6d6e56a2d957f5144900e92a9c1c1103,
         type: 3}
       propertyPath: m_Name
-      value: Resolution
+      value: Resolution Setting
       objectReference: {fileID: 0}
     - target: {fileID: 1284481594706778777, guid: 6d6e56a2d957f5144900e92a9c1c1103,
         type: 3}

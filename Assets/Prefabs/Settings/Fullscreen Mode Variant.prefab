@@ -136,7 +136,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8895731963520108884}
+      - m_Target: {fileID: 795243793269245698}
         m_MethodName: OnFullscreenModeChanged
         m_Mode: 0
         m_Arguments:
@@ -452,20 +452,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8895731963520108884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3271441195256104284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2bc26b215544c7a793064ac22c6734, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  label: 2
-  value: 0
 --- !u!1 &3943004988317051732
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,6 +558,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &795243793269245698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271441195256104284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2bc26b215544c7a793064ac22c6734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4429037059259050028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1017,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 34
+  m_fontSize: 29.45
   m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 1

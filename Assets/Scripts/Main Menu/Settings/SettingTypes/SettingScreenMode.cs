@@ -2,22 +2,35 @@
 using UnityEngine;
 using TMPro;
 
-class SettingScreenMode : Setting<FullScreenMode>
+class SettingScreenMode : MonoBehaviour, ISetting
 {
+    private readonly string label = "Settings_" + SettingType.DisplayFullscreenMode.ToString();
+    private FullScreenMode toSet;
+    private TMP_Dropdown dropdown = null;
+
+    private void Awake()
+    {
+        toSet = Screen.fullScreenMode;
+        dropdown = this.GetComponentInChildren<TMP_Dropdown>();
+    }
+
     public void OnFullscreenModeChanged(Int32 selection)
     {
-        value = (FullScreenMode)selection;
-        Screen.fullScreenMode = value;
-        Debug.Log("Set screen mode to " + value);
+        toSet = (FullScreenMode)selection;
     }
 
-    public override void WriteToPrefs()
+    public void LoadFromPrefs()
     {
-        throw new NotImplementedException();
+        int value = PlayerPrefs.GetInt(label, 0);
+        toSet = (FullScreenMode) value;
+        dropdown.value = value;
     }
 
-    public override void LoadFromPrefs()
+    public void ApplyAndSetPrefs()
     {
-        throw new NotImplementedException();
+        Screen.fullScreenMode = toSet;
+        
+        PlayerPrefs.SetInt(label, (int) toSet);
+        Debug.Log("Set screen mode to " + toSet);
     }
 }

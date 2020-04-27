@@ -1,43 +1,63 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class SettingResolution : Setting<Resolution>
+public class SettingResolution : MonoBehaviour, ISetting
 {
-    [SerializeField] private bool stopAt768P = true;
+    private readonly string label = "Settings_" + SettingType.DisplayResolution.ToString();
     
+    [SerializeField] private bool limitResolutionList = true;
+    
+    private Resolution toSet;
+    private int toSetIndex = 0;
     private TMP_Dropdown dropdown = null;
     
     private void Awake()
     {
+        toSet = Screen.currentResolution;
         dropdown = this.GetComponentInChildren<TMP_Dropdown>();
-        dropdown.options.Clear();
-        int limit = stopAt768P ? Screen.resolutions.Length - 15 : 0;
-        for (int i = Screen.resolutions.Length - 1; i >= limit; --i)
-        {
-            dropdown.options.Add(new TMP_Dropdown.OptionData(Screen.resolutions[i].ToString()));
-        }
-        
+        PopulateDropdown();
     }
-
+    
     public void SetResolution(Int32 selection)
     {
-        value = Screen.resolutions[Screen.resolutions.Length - selection - 1];
-        Screen.SetResolution(value.width,
-            value.height,
+        toSetIndex = Screen.resolutions.Length - selection - 1;
+        toSet = Screen.resolutions[toSetIndex];
+    }
+
+    public void LoadFromPrefs()
+    {
+        toSetIndex = PlayerPrefs.GetInt(label, -1);
+        if (toSetIndex == -1)
+        {
+            Debug.Log("Value not set");
+        }
+        
+        toSet = Screen.resolutions[toSetIndex];
+        dropdown.value = Screen.resolutions.Length - toSetIndex - 1;
+    }
+
+    public void ApplyAndSetPrefs()
+    {
+        Screen.SetResolution(toSet.width,
+            toSet.height,
             Screen.fullScreen);
         
-        Debug.Log("Set resolution to " + value.ToString());
+        PlayerPrefs.SetInt(label, toSetIndex);
+        Debug.Log("Set resolution to " + toSet.ToString());
     }
-
-    public override void WriteToPrefs()
+    
+    private void PopulateDropdown()
     {
-        throw new NotImplementedException();
-    }
-
-    public override void LoadFromPrefs()
-    {
-        throw new NotImplementedException();
+        int limit = limitResolutionList ? Screen.resolutions.Length - 15 : 0;
+        dropdown.options.Clear();
+        for (int i = Screen.resolutions.Length - 1; i >= limit; --i)
+        {
+            if (Screen.resolutions[i].Equals(toSet))
+            {
+                toSetIndex = i;
+            }
+            dropdown.options.Add(new TMP_Dropdown.OptionData(Screen.resolutions[i].ToString()));
+        }
     }
 }
