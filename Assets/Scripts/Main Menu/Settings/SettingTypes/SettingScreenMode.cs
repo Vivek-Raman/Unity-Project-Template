@@ -2,7 +2,7 @@
 using UnityEngine;
 using TMPro;
 
-class SettingScreenMode : MonoBehaviour, ISetting
+public class SettingScreenMode : MonoBehaviour, ISetting
 {
     private readonly string label = "Settings_" + SettingType.DisplayFullscreenMode.ToString();
     private FullScreenMode toSet;
